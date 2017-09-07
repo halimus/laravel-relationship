@@ -15,10 +15,10 @@ class CreateOrdersTable extends Migration {
         Schema::create('orders', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
+            $table->integer('customer_id')->unsigned();
             $table->ipAddress('ip_address', 45)->nullable();
             $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
         });
     }
 
