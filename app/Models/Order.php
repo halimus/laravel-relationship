@@ -19,10 +19,10 @@ class Order extends Model {
     ];
     
     /**
-     * Get the user that the orders belongs to.
+     * Get the customer that the orders belongs to.
     */
-    public function user(){
-        return $this->belongsTo('App\Models\User', 'id');
+    public function customer(){
+        return $this->belongsTo('App\Models\Customer', 'id');
     }
     
     /**
