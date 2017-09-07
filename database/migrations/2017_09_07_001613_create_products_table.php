@@ -19,6 +19,7 @@ class CreateProductsTable extends Migration {
             $table->text('description')->nullable();
             $table->decimal('price', 6, 2);
             $table->integer('category_id')->unsigned();
+            
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
         });
     }
