@@ -12,7 +12,7 @@ class CreateOrdersProductsTable extends Migration {
      * @return void
      */
     public function up() {
-        Schema::create('products', function (Blueprint $table) {
+        Schema::create('orders_products', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             //$table->increments('id');
             $table->primary(['order_id', 'product_id']); 
