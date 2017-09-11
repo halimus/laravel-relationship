@@ -13,6 +13,10 @@ class CategoryController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {   
+        
+        echo '<a href="'.url('/').'">Home</a>';
+        echo '<h3>Categories List:</h3>';
+        
         //$categories = \App\Models\Category::all();
         $categories = Category::all()->sortByDesc("created_at");
        
@@ -39,12 +43,14 @@ class CategoryController extends Controller {
             die('Record not exist!');
         }
         else{
+            echo '<a href="'.url('/').'">Home</a> | ';
+            echo '<a href="'.url('categories').'">Back to Categories List</a>';
+            
             echo '<h3>Category:</h3>';
             echo 'id= '.$category->id;
             echo '<br>name= '.$category->name;
             echo '<br>created_at= '.$category->created_at;
-            echo '<br><a href="'.url('categories').'">Back to Categories List</a>';
-            
+
             echo '<h3>Category Products:</h3>';
             
             $products = $category->products()->get();
