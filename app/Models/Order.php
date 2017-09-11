@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model {
-    
+
     protected $table = 'orders';
     protected $primaryKey = 'id';
-    
+
     /**
      * The attributes that are mass assignable.
      *
@@ -17,18 +17,18 @@ class Order extends Model {
     protected $fillable = [
         'user_id', 'ip_address',
     ];
-    
+
     /**
      * Get the customer that the orders belongs to.
-    */
-    public function customer(){
+     */
+    public function customer() {
         return $this->belongsTo('App\Models\Customer', 'id');
     }
     
     /**
-     * Get the products for the order.
+     *  Get the products that the order belongs to.
      */
-    public function products(){
-       return $this->hasMany('App\Models\Product', 'id');
+    public function products() {
+        return $this->belongsToMany('App\Models\Product', 'order_product');
     }
 }

@@ -20,24 +20,27 @@ class ProductsTableSeeder extends Seeder {
             [
                 'id' => 1,
                 'name' => 'Product1',
-                'description' => 'xx',
+                'description' => 'This is description of Product1',
                 'price' => '6.00',
-                'category_id' => 1
+                'category_id' => 1,
+                'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s'),
             ],
-//            [
-//                'id' => 2,
-//                'name' => 'Product2',
-//                'description' => '',
-//                'price' => '8.50',
-//                'category_id' => 1
-//            ],
-//            [
-//                'id' => 3,
-//                'name' => 'Product3',
-//                'description' => '',
-//                'price' => '8.28',
-//                'category_id' => 2
-//            ],            
+            [
+                'id' => 2,
+                'name' => 'Product2',
+                'description' => 'This is description of Product1',
+                'price' => '8.50',
+                'category_id' => 1,
+                'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s'),
+            ],
+            [
+                'id' => 3,
+                'name' => 'Product3',
+                'description' => null,
+                'price' => '8.28',
+                'category_id' => 2,
+                'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s'),
+            ],            
                
         ]);
         

@@ -16,7 +16,7 @@ class OrdersTableSeeder extends Seeder {
         App\Models\Order::truncate();
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
                 
-        DB::table('customers')->insert([
+        DB::table('orders')->insert([
             [
                 'id' => 1,
                 'customer_id' => 1,
@@ -25,13 +25,13 @@ class OrdersTableSeeder extends Seeder {
             ],
             [
                 'id' => 2,
-                'customer_id' => 2,
+                'customer_id' => 1,
                 'ip_address' => '192.168.0.20',
                 'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s'),
             ],    
             [
                 'id' => 3,
-                'customer_id' => 3,
+                'customer_id' => 2,
                 'ip_address' => '192.168.0.44',
                 'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s'),
             ],  

@@ -17,9 +17,9 @@ class CategoriesTableSeeder extends Seeder {
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
         
         DB::table('categories')->insert([
-            ['id' => 1, 'name' => 'Category1'],  
-            ['id' => 2, 'name' => 'Category2'],  
-            ['id' => 3, 'name' => 'Category3'],  
+            ['id' => 1, 'name' => 'Category1', 'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s')],  
+            ['id' => 2, 'name' => 'Category2', 'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s')],  
+            ['id' => 3, 'name' => 'Category3', 'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s')],  
         ]);
         
     }

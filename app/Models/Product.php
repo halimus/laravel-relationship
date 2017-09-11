@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model {
     
-    protected $table = 'categories';
+    protected $table = 'products';
     protected $primaryKey = 'id';
     
     /**
@@ -25,11 +25,20 @@ class Product extends Model {
         return $this->belongsTo('App\Models\Category', 'id');
     }
     
+    
     /**
-     * Get the orders for the product.
+     *  Get the orders that the product belongs to.
      */
-    public function orders(){
-       return $this->hasMany('App\Models\Order', 'id');
+    public function orders() {
+        return $this->belongsToMany('App\Models\Order', 'order_product');
     }
     
+    
+//    /**
+//     * Get the orders for the product.
+//     */
+//    public function orders(){
+//       return $this->hasMany('App\Models\Order', 'id');
+//    }
+//    
 }

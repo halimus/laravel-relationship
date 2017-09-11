@@ -15,27 +15,21 @@ class CustomersTableSeeder extends Seeder {
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         App\Models\Customer::truncate();
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
-        
-        Schema::create('customers', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
-            $table->increments('id');
-            $table->string('name', 25);
-            $table->string('email', 45)->unique();
-            $table->string('phone', 20)->nullable();
-        });
-        
+          
         DB::table('customers')->insert([
             [
                 'id' => 1,
                 'name' => 'Halim',
                 'email' => 'halim@domain.com',
-                'phone' => '123-456-7890'
+                'phone' => '123-456-7890',
+                'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s'),
             ],
             [
                 'id' => 2,
-                'name' => 'Jhon',
-                'email' => 'jhon@example.com',
-                'phone' => null
+                'name' => 'Sara',
+                'email' => 'sara@example.com',
+                'phone' => null,
+                'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s'),
             ],           
                
         ]);
