@@ -20,7 +20,7 @@ class CreateOrderProductTable extends Migration {
             $table->integer('product_id')->unsigned();
             $table->tinyInteger('quantity')->default(1);
             $table->timestamps();
-            $table->foreign('order_id')->references('id')->on('orders');
+            $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
         });
     }
