@@ -14,3 +14,18 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/categories', 'CategoryController@index');
+Route::get('/categories/{id}', 'CategoryController@show');
+
+Route::get('/products', 'ProductController@index');
+Route::get('/products/{id}', 'ProductController@show');
+
+Route::get('/customers', 'CustomerController@index');
+Route::get('/customers/{id}', 'CustomerController@show');
+
+Route::get('/orders', 'OrderController@index');
+Route::get('/orders/{id}', 'OrderController@show');
+
+
+Route::get('/orders/products', 'OrderController@index');

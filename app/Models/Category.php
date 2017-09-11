@@ -22,7 +22,10 @@ class Category extends Model {
      * Get the products for the category.
      */
     public function products(){
-       return $this->hasMany('App\Models\Product', 'id');
+       //return $this->hasMany('App\Comment', 'foreign_key', 'local_key');
+       //return $this->hasMany('App\Models\Product');
+       //return $this->hasMany('App\Models\Product', 'category_id');
+       return $this->hasMany('App\Models\Product', 'category_id', 'id');
     }
     
 }
