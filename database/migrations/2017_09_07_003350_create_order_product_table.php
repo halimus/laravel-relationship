@@ -16,8 +16,8 @@ class CreateOrderProductTable extends Migration {
             $table->engine = 'InnoDB';
             //$table->increments('id');
             $table->primary(['order_id', 'product_id']); 
-            $table->integer('order_id')->unsigned();
-            $table->integer('product_id')->unsigned();
+            $table->integer('order_id')->unsigned()->index();
+            $table->integer('product_id')->unsigned()->index();
             $table->tinyInteger('quantity')->default(1);
             $table->timestamps();
             $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');

@@ -22,23 +22,21 @@ class Product extends Model {
      * Get the category that the product belongs to.
     */
     public function category(){
-        return $this->belongsTo('App\Models\Category', 'id');
+        //return $this->belongsTo('App\Post', 'foreign_key');
+        //return $this->belongsTo('App\Models\Category');
+        return $this->belongsTo('App\Models\Category', 'category_id');
     }
     
     
     /**
      *  Get the orders that the product belongs to.
+     * 
+     * @return use Illuminate\Database\Eloquent\Relations\Relation\belongsToMany
      */
     public function orders() {
-        return $this->belongsToMany('App\Models\Order', 'order_product');
+        //->withPivot('column1', 'column2');
+        return $this->belongsToMany('App\Models\Order', 'order_product')->withPivot('quantity');
+        //return $this->belongsToMany('App\Models\Order')->withPivot('quantity');
     }
-    
-    
-//    /**
-//     * Get the orders for the product.
-//     */
-//    public function orders(){
-//       return $this->hasMany('App\Models\Order', 'id');
-//    }
-//    
+      
 }

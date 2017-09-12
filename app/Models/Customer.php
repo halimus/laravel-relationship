@@ -22,7 +22,10 @@ class Customer extends Model {
      * Get the products for the category.
      */
     public function orders(){
-       return $this->hasMany('App\Models\Order', 'id');
+       //return $this->hasMany('App\Models\Order');
+       //return $this->hasMany('App\Models\Order', 'customer_id');
+       return $this->hasMany('App\Models\Order', 'customer_id', 'id');
+       
     }
     
 }

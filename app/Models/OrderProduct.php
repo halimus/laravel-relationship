@@ -20,18 +20,20 @@ class OrderProduct extends Model {
     ];
 
     
-//    /**
-//     * Get the orders that the orders_products belongs to.
-//     */
-//    public function orders() {
-//        return $this->belongsToMany('App\Models\Order', 'id');
-//    }
-//
-//    /**
-//     * Get the products that the orders_products belongs to.
-//     */
-//    public function products() {
-//        return $this->belongsToMany('App\Models\Product', 'id');
-//    }
+    /**
+     * Get the product that the order_product belongs to.
+    */
+    public function product(){
+        //return $this->belongsTo('App\Post', 'foreign_key');
+        //return $this->belongsTo('App\Models\Category');
+        return $this->belongsTo('App\Models\Product');
+    }
+    
+    /**
+     * Get the order that the order_product belongs to.
+    */
+    public function order(){
+        return $this->belongsTo('App\Models\Order');
+    }
     
 }

@@ -44,7 +44,7 @@ class CategoryController extends Controller {
         }
         else{
             echo '<a href="'.url('/').'">Home</a> | ';
-            echo '<a href="'.url('categories').'">Back to Categories List</a>';
+            echo '<a href="'.url('categories').'">Back to List</a>';
             
             echo '<h3>Category:</h3>';
             echo 'id= '.$category->id;
@@ -65,7 +65,6 @@ class CategoryController extends Controller {
                 $url = url('products/'.$product->id);
                 echo '<br><a href="'.$url.'">'. $url.'</a>';
             }
-            
         }
     }
     
