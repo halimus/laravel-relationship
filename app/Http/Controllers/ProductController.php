@@ -59,7 +59,7 @@ class ProductController extends Controller {
             echo '<br>category_name= '.$product->category->name;        
             echo '<br>created_at= '.$product->created_at;
 
-            echo '<h3>Product Orders:</h3>';
+            echo '<h3>The Orders associated to this Product:</h3>';
             
             $orders = $product->orders()->get();
             
@@ -69,7 +69,12 @@ class ProductController extends Controller {
                 echo '<br>customer_id= '.$order->customer_id;
                 echo '<br>ip_address= '.$order->ip_address;  
                 echo '<br>quantity= '.$order->pivot->quantity;
+                //echo '<br>created_at= '.$order->pivot->created_at;
                 echo '<br>created_at= '.$order->created_at;
+                
+                $url = url('orders/'.$order->id);
+                echo '<br><a href="'.$url.'">'. $url.'</a>';
+                
             }
              
         }

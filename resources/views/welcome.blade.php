@@ -11,13 +11,12 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            
+            <h1>Laravel-relationship</h1>
             <ul>
-                <li><a href="{{ url('/categories') }}">Categories</a></li>
-                <li><a href="{{ url('/products') }}">Procusts</a></li>
                 <li><a href="{{ url('/customers') }}">Customers</a></li>
+                <li><a href="{{ url('/categories') }}">Categories</a></li>
+                <li><a href="{{ url('/products') }}">Procusts</a></li> 
                 <li><a href="{{ url('/orders') }}">Orders</a></li>
-                <li><a href="{{ url('/orders/products') }}">OrdersProduct</a></li>
             </ul>
             
         </div>

@@ -15,17 +15,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//categories routes
 Route::get('/categories', 'CategoryController@index');
 Route::get('/categories/{id}', 'CategoryController@show');
 
+//products routes
 Route::get('/products', 'ProductController@index');
 Route::get('/products/{id}', 'ProductController@show');
 
+//customers routes
 Route::get('/customers', 'CustomerController@index');
 Route::get('/customers/{id}', 'CustomerController@show');
 
+//orders routes
 Route::get('/orders', 'OrderController@index');
 Route::get('/orders/{id}', 'OrderController@show');
 
-
-Route::get('/orders/products', 'OrderController@index');

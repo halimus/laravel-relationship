@@ -34,9 +34,8 @@ class Product extends Model {
      * @return use Illuminate\Database\Eloquent\Relations\Relation\belongsToMany
      */
     public function orders() {
-        //->withPivot('column1', 'column2');
-        return $this->belongsToMany('App\Models\Order', 'order_product')->withPivot('quantity');
-        //return $this->belongsToMany('App\Models\Order')->withPivot('quantity');
+        //return $this->belongsToMany('App\Models\Order', 'order_product')->withPivot('quantity');
+        return $this->belongsToMany('App\Models\Order')->withPivot('quantity')->withTimestamps();
     }
       
 }
